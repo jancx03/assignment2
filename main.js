@@ -19,3 +19,8 @@ Array.prototype.myMap = function(callbackFn) {
 
 
 };
+// FILTER
+Array.prototype.myFilter = function(callback, i = 0, result = []) {
+  callback(this[i], i, this) && result.push(this[i]);
+  return i < arr.length ? this.myFilter(callback, ++i, result) :  result;
+};
