@@ -24,3 +24,16 @@ Array.prototype.myFilter = function(callback, i = 0, result = []) {
   callback(this[i], i, this) && result.push(this[i]);
   return i < arr.length ? this.myFilter(callback, ++i, result) :  result;
 };
+// SOME //
+Array.prototype.mySome = function(callback) {
+let some = false; 
+let index = 0;
+while(index < this.length){
+    if(callback.call(this, this[index], index, this)){
+      some = true 
+      break 
+    }
+    index++
+}
+return some;
+};
