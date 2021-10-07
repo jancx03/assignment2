@@ -75,3 +75,19 @@ while(index < this.length){
 return false
 
 };
+// INDEXOF //
+Array.prototype.myIndexOf = function(search, fromIndex) {
+ fromIndex = fromIndex ? typeof fromIndex === 'number' ? fromIndex 
+                : typeof fromIndex === 'string' ? (fromIndex-=0) && fromIndex === fromIndex ? fromIndex 
+                : 0 : 0 : 0
+  let index = -1
+  let i = fromIndex < 0 ? this.length + fromIndex : fromIndex
+  while (i < this.length) {
+    if(search == this[i]){
+      index = i
+      break
+    }
+    i++
+  }
+  return index
+};
