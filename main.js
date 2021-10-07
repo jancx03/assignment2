@@ -47,3 +47,19 @@ Array.prototype.myEvery = function(callback) {
 
   return true
 }
+// REDUCE //
+Array.prototype.myReduce = function(callback, initialValue = null) {
+  let previousValue = this[0]
+  let initialIndex = 1
+
+  if (initialValue) {
+    previousValue = initialValue
+    initialIndex = 0
+  }
+
+  for (let i = initialIndex; i < this.length; i++) {
+    previousValue = callback(previousValue, this[i], i, this)
+  }
+
+  return previousValue
+}
