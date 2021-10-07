@@ -132,3 +132,13 @@ Object.grabKeys = function(obj) {
 
   return result
 }
+// VALUES //
+Object.grabValues = function(obj) {
+  const result = []
+
+  for (const key in obj) {
+    result.push(obj[key])
+  }
+
+  return result
+}
