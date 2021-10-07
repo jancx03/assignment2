@@ -102,3 +102,23 @@ Array.prototype.myPush = function(...args) {
     return this.length;
 
 };
+// LASTINDEXOF //
+Array.prototype.myLastIndexOf = function(searchValue, fromIndex = null) {
+  let initialIndex = this.length -1
+
+  if (fromIndex !== null) {
+    if (fromIndex < 0) {
+      initialIndex = this.length - fromIndex * -1
+    } else {
+      initialIndex = fromIndex
+    }
+  }
+
+  for (let i = initialIndex; i > -1; i--) {
+    if (this[i] === searchValue) {
+      return i
+    }
+  }
+
+  return -1
+};
