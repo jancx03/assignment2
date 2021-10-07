@@ -63,3 +63,15 @@ Array.prototype.myReduce = function(callback, initialValue = null) {
 
   return previousValue
 }
+// INCLUDES //
+Array.prototype.myIncludes = function(value, index) {
+index = typeof index === 'number' ? index < 0 ? Math.abs(index) > this.length ? this.length : this.length + index : index > this.length ? this.length : index : 0
+while(index < this.length){
+    let curr = this[index]
+    if(value === curr) return true
+    if(value !== value && curr !== curr) return true
+    index++
+}
+return false
+
+};
