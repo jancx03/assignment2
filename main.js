@@ -122,3 +122,13 @@ Array.prototype.myLastIndexOf = function(searchValue, fromIndex = null) {
 
   return -1
 };
+// KEYS //
+Object.grabKeys = function(obj) {
+  const result = []
+
+  for (const key in obj) {
+    result.push(key)
+  }
+
+  return result
+}
